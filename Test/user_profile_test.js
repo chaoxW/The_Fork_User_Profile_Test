@@ -5,6 +5,9 @@ const { Utils } = require("../Utils/utils");
 const { loginPageUsage } = require("../Utils/login_page");
 const { userProfileUsage } = require("../Utils/user_profile_page");
 let firstName = Users.firstName;
+let lastName = Users.lastName;
+let phoneNumber = Users.phone;
+let email = Users.email;
 let userName = Users.userName;
 let password = Users.password;
 
