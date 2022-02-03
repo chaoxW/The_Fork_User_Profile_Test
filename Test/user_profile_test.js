@@ -45,5 +45,11 @@ describe("login and check user profile", function () {
     await userProfileInstance.openPersonalInfo();
     // firstname validation
     await userProfileInstance.firstNameValidation(firstName);
+    // lastname validation
+    await userProfileInstance.lastNameValidation(lastName);
+    // phone number validation
+    await userProfileInstance.phoneNumberValidation(phoneNumber);
+    // email validation
+    await userProfileInstance.emailValidation(email);
   });
 });
