@@ -1,4 +1,4 @@
-# The_Fork_User_Profile_Test structure
+# Folder Structure
 
     .
     ├── Utils
@@ -29,6 +29,7 @@
     │   └── user_profile_test.js - Test file in JS
     └── package.json - Configuration for scripts and dependencies
 
+# Run
 Run test with `npm test` from command  
 if you see   
 **There is reCAPTCHA to handle**  
