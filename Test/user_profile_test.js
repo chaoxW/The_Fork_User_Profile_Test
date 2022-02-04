@@ -13,7 +13,7 @@ let password = Users.password;
 
 describe("login and check user profile", function () {
   before(async function () {
-    // launch the browser
+    // launch the browser and open the fork url
     let loginInstance = new loginPageUsage();
     await loginInstance.openTheFork();
 
@@ -24,7 +24,7 @@ describe("login and check user profile", function () {
 
   after(async function () {
     let loginInstance = new loginPageUsage();
-    // quite browser
+    // quit browser
     await loginInstance.quitChrome();
   });
 
