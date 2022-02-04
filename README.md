@@ -16,13 +16,13 @@
     │   ├── browsers.js
     │   │   └── manage the browsers like Chrome
     │   ├── login_page_locators.js
-    │   │   └── manage the locators from login page
+    │   │   └── manage the locators for login page
     │   ├── manage_cookie.js
     │   │   └── manage the cookies for the website
     │   ├── urls.js
     │   │   └── manage the urls
     │   ├── user_profile_page_locators.js
-    │   │   └── manage the locators from user profile page
+    │   │   └── manage the locators for user profile page
     │   └── users.js
     │       └── manage the users data
     ├── Test
