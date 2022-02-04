@@ -7,7 +7,7 @@
     │   ├── login_page.js
     │   │   └── Manage the class for login page
     │   ├── robot_verification.js
-    │   │   └── Manage if there is reCAPTCHA to manually verification
+    │   │   └── Manage if there is reCAPTCHA to do manually verification
     │   ├── user_profile_page.js
     │   │   └── Manage the class for user profile page
     │   └── utils.js
