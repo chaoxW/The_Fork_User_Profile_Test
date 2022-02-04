@@ -1,33 +1,33 @@
 # The_Fork_User_Profile_Test structure
 
-.
-├── Utils
-│   ├── drivers.js
-│   │   └── manage the drivers
-│   ├── login_page.js
-│   │   └── Manage the class for login page
-│   ├── robot_verification.js
-│   │   └── Manage if there is reCAPTCHA to manually verification
-│   ├── user_profile_page.js
-│   │   └── Manage the class for user profile page
-│   └── utils.js
-│       └── Manage the utils class
-├── Data
-│   ├── browsers.js
-│   │   └── manage the browsers like Chrome
-│   ├── login_page_locators.js
-│   │   └── manage the locators from login page
-│   ├── manage_cookie.js
-│   │   └── manage the cookies for the website
-│   ├── urls.js
-│   │   └── manage the urls
-│   ├── user_profile_page_locators.js
-│   │   └── manage the locators from user profile page
-│   └── users.js
-│       └── manage the users data
-├── Test
-│   └── user_profile_test.js - Test file in JS
-└── package.json - Configuration for scripts and dependencies
+    .
+    ├── Utils
+    │   ├── drivers.js
+    │   │   └── manage the drivers
+    │   ├── login_page.js
+    │   │   └── Manage the class for login page
+    │   ├── robot_verification.js
+    │   │   └── Manage if there is reCAPTCHA to manually verification
+    │   ├── user_profile_page.js
+    │   │   └── Manage the class for user profile page
+    │   └── utils.js
+    │       └── Manage the utils class
+    ├── Data
+    │   ├── browsers.js
+    │   │   └── manage the browsers like Chrome
+    │   ├── login_page_locators.js
+    │   │   └── manage the locators from login page
+    │   ├── manage_cookie.js
+    │   │   └── manage the cookies for the website
+    │   ├── urls.js
+    │   │   └── manage the urls
+    │   ├── user_profile_page_locators.js
+    │   │   └── manage the locators from user profile page
+    │   └── users.js
+    │       └── manage the users data
+    ├── Test
+    │   └── user_profile_test.js - Test file in JS
+    └── package.json - Configuration for scripts and dependencies
 
 Run test with `npm test` from command  
 if you see   
