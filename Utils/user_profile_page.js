@@ -1,19 +1,20 @@
-const { By, until } = require("selenium-webdriver");
 const { chromeDriver } = require("../Utils/drivers");
 const assert = require("assert");
 const { userProfilePage } = require("../Data/user_profile_page_locators");
+const { Utils } = require("../Utils/utils");
 const personalInfoButton = userProfilePage.personal_info_button_xpath;
 const personalFirstname = userProfilePage.personal_firstname_xpath;
 const personalLastname = userProfilePage.personal_lastname_xpath;
 const personalPhone = userProfilePage.personal_phone_xpath;
 const personalEmail = userProfilePage.personal_email_xpath;
 
+let utils = new Utils();
+
 class userProfileUsage {
   constructor() {}
   async openPersonalInfo() {
-    let personalInformationButton = await chromeDriver.wait(
-      until.elementLocated(By.xpath(personalInfoButton)),
-      1000
+    let personalInformationButton = await utils.getElementByXpath(
+      personalInfoButton
     );
     try {
       await personalInformationButton.click();
@@ -25,11 +26,10 @@ class userProfileUsage {
   }
 
   async firstNameValidation(name) {
-    let personalPageName = await chromeDriver.wait(
-      until.elementLocated(By.xpath(personalFirstname)),
-      1000
+    let personalPageFirstName = await utils.getElementByXpath(
+      personalFirstname
     );
-    let personalPageNameValue = await personalPageName
+    let personalPageNameValue = await personalPageFirstName
       .getAttribute("value")
       .then(function (value) {
         return value;
@@ -39,10 +39,7 @@ class userProfileUsage {
   }
 
   async lastNameValidation(name) {
-    let personalPageName = await chromeDriver.wait(
-      until.elementLocated(By.xpath(personalLastname)),
-      1000
-    );
+    let personalPageName = await utils.getElementByXpath(personalLastname);
     let personalPageNameValue = await personalPageName
       .getAttribute("value")
       .then(function (value) {
@@ -53,10 +50,7 @@ class userProfileUsage {
   }
 
   async phoneNumberValidation(name) {
-    let personalPagePhone = await chromeDriver.wait(
-      until.elementLocated(By.xpath(personalPhone)),
-      1000
-    );
+    let personalPagePhone = await utils.getElementByXpath(personalPhone);
     let personalPagePhoneValue = await personalPagePhone
       .getAttribute("value")
       .then(function (value) {
@@ -67,10 +61,7 @@ class userProfileUsage {
   }
 
   async emailValidation(name) {
-    let personalPageEmail = await chromeDriver.wait(
-      until.elementLocated(By.xpath(personalEmail)),
-      1000
-    );
+    let personalPageEmail = await utils.getElementByXpath(personalEmail);
     let personalPageEmailValue = await personalPageEmail
       .getAttribute("value")
       .then(function (value) {

@@ -1,15 +1,13 @@
-const { By, until, Browser } = require("selenium-webdriver");
 const { chromeDriver } = require("../Utils/drivers");
+const { Utils } = require("../Utils/utils");
 
 let i = 30;
+let utils = new Utils();
 
 async function roboTestCountDown() {
   try {
     await chromeDriver.switchTo().frame(0);
-    let human = await chromeDriver.wait(
-      until.elementLocated(By.xpath("//div[@id='captcha-submit']")),
-      1000
-    );
+    let human = await utils.getElementByXpath("//div[@id='captcha-submit']");
     if (human != null) {
       console.log("There is reCAPTCHA to handle");
       console.log("Hello! You have 30s to prove you are NOT a robot");

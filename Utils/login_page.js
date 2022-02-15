@@ -2,12 +2,15 @@ const { By, until } = require("selenium-webdriver");
 const { loginPage } = require("../Data/login_page_locators");
 const { Urls } = require("../Data/urls");
 const { chromeDriver } = require("../Utils/drivers");
+const { Utils } = require("../Utils/utils");
 const loginButtonHomePage = loginPage.login_button_xpath;
 const emailField = loginPage.email_input_id;
 const emailContinueButton = loginPage.email_continue_button_xpath;
 const passwordField = loginPage.password_input_xpath;
 const passwordContinueButton = loginPage.password_continue_button_xpath;
 const url = Urls.baseURL;
+
+let utils = new Utils();
 
 class loginPageUsage {
   constructor() {}
@@ -21,10 +24,7 @@ class loginPageUsage {
   }
 
   async clickLoginButton() {
-    let loginButton = await chromeDriver.wait(
-      until.elementLocated(By.xpath(loginButtonHomePage)),
-      1000
-    );
+    let loginButton = await utils.getElementByXpath(loginButtonHomePage);
     try {
       await loginButton.click();
       console.log("Click login button");
@@ -35,10 +35,7 @@ class loginPageUsage {
   }
 
   async insertUsername(username) {
-    let emailInput = await chromeDriver.wait(
-      until.elementLocated(By.id(emailField)),
-      1000
-    );
+    let emailInput = await utils.getElementByID(emailField);
     try {
       emailInput.sendKeys(username);
       console.log(`the username is inserted as ${username}`);
@@ -49,9 +46,8 @@ class loginPageUsage {
   }
 
   async pressContinueButtonAfterUsername() {
-    let continueButtonUserName = await chromeDriver.wait(
-      until.elementLocated(By.xpath(emailContinueButton)),
-      1000
+    let continueButtonUserName = await utils.getElementByXpath(
+      emailContinueButton
     );
     try {
       continueButtonUserName.click();
@@ -63,10 +59,7 @@ class loginPageUsage {
   }
 
   async insertPassword(password) {
-    let passwordInput = await chromeDriver.wait(
-      until.elementLocated(By.xpath(passwordField)),
-      1000
-    );
+    let passwordInput = await utils.getElementByXpath(passwordField);
     try {
       await passwordInput.sendKeys(password);
       console.log("password is inserted");
@@ -77,9 +70,8 @@ class loginPageUsage {
   }
 
   async pressContinueButtonAfterPassword() {
-    let continueButtonPass = await chromeDriver.wait(
-      until.elementLocated(By.xpath(passwordContinueButton)),
-      1000
+    let continueButtonPass = await utils.getElementByXpath(
+      passwordContinueButton
     );
     try {
       await continueButtonPass.click();
